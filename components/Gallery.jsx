@@ -1,14 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar";
 
-const Gallery = ({objects}) => {
+const Gallery = ({objects, base}) => {
   return (
-    <div>
-      <Navbar/>
-      <div className="mt-24 flex justify-center flex-wrap gap-16">
+    <div>      <div className="mt-10 flex justify-center flex-wrap gap-16">
         {
           objects?.map(item => {
-            return <img src={`https://testbucketfp.s3.ap-south-1.amazonaws.com/${item}`} className="w-56 h-56 shadow-2xl"/>
+            return <img src={`${base}${item}`} className="w-56 h-56" style={{boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"}}/>
           })
         }
       </div>
